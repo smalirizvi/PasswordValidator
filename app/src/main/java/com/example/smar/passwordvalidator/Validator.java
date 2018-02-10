@@ -6,9 +6,15 @@ package com.example.smar.passwordvalidator;
 
 public class Validator {
     public static boolean validate(String password){
-        if(!(password.toUpperCase().equals("PASSWORD")) && !(password.length() < 8)){
+        if(!password.equals("password") &&
+                password.length() >= 8 && //make sure length is 8 or more
+                password.matches(".*[a-z].*") && //atleast 1 lowercase
+                password.matches(".*[A-Z].*")&&//atleast 1 uppercase
+                password.matches(".*[$&+,:;=?@#|'<>.-^*()%!].*") &&//atleast 1 special character
+                password.matches(".*[0-9].*")) {//atleast 1 digit
             return true;
-        }else{
+        }
+        else{
             return false;
         }
     }
