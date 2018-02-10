@@ -27,25 +27,25 @@ public class ExampleUnitTest {
 
     @Test
     public void passwordNoLower(){
-        assertFalse(validator.validate("AFDFBSGVD"));
+        assertFalse(Validator.validate("AFDFBSGVD"));
     }
     @Test
     public void passwordNoUpper(){
-        assertFalse(validator.validate("dasfgfjsdfg"));
+        assertFalse(Validator.validate("dasfgfjsdfg"));
     }
     @Test
     public void passwordNoSpecialChar(){
-        assertFalse(validator.validate("ahjf13kds"));
+        assertFalse(Validator.validate("ahjf13kds"));
     }
 
     @Test
     public void passwordNoDigit(){
-        assertFalse(validator.validate("a$asds^fds"));
+        assertFalse(Validator.validate("a$asds^fds"));
     }
 
     @Test
     public void passwordGood(){
-        assertTrue(validator.validate("Ab1^aB1$"));
+        assertTrue(Validator.validate("Ab1^aB1$"));
     }
 
 }
