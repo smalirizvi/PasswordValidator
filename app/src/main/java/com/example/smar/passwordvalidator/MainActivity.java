@@ -13,21 +13,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Button btn = (Button) findViewById(R.id.button);
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText input = (EditText) findViewById(R.id.enterPass);
-                TextView result = (TextView) findViewById(R.id.strength);
+                EditText enterPass = (EditText) findViewById(R.id.enterPass);
+                TextView strength = (TextView) findViewById(R.id.strength);
 
-                //result.setText("yes");
-                //validator.validate(input.getText()) ==
-                if(Validator.validate(input.getText().toString()) == true)
-                    result.setText("Valid Password");
+                if(Validator.validate(enterPass.getText().toString()) == true)
+                    strength.setText("Good Password");
                 else
-                    result.setText("Not Valid Password");
+                    strength.setText("Failed Password");
             }
         });
     }
